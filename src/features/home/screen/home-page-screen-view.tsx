@@ -1,7 +1,8 @@
 import React from "react";
+import AccountInformation from "@/src/features/home/components/account-information";
 
 function HomePageScreenView() {
-  return <div>HomePageScreenView</div>;
+  return <AccountInformation />;
 }
 
 export default HomePageScreenView;
