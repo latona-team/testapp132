@@ -1,21 +1,42 @@
-import React from "react";
 import Image from "next/image";
 
-interface Props {
-  name: string;
+export interface IconProps {
   size?: number;
+  width?: number;
+  height?: number;
+  name: string;
+  id?: string;
   className?: string;
+  fluid?: boolean;
+  containerClassName?: string;
 }
 
-function Icon({ name, size = 24, className = "" }: Props) {
+function Icon({
+  size = 24,
+  width: widthFromProps,
+  height: heightFromProps,
+  name,
+  className,
+  fluid = false,
+  containerClassName,
+  ...imageProps
+}: IconProps) {
+  const width = widthFromProps || size;
+  const height = heightFromProps || size;
+
+  const containerStyle = fluid ? undefined : { width, height };
+
   return (
-    <div className={`inline-flex ${className}`}>
+    <div
+      className={`relative ${containerClassName ?? ""}`}
+      style={containerStyle}
+    >
       <Image
-        src={`/icons/${name}.svg`}
+        fill
         alt={name}
-        width={size}
-        height={size}
-        className="object-contain"
+        src={`/icons/${name}.svg`}
+        {...imageProps}
+        className={`${className ?? ""}`}
       />
     </div>
   );
