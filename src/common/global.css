@@ -1,8 +1,31 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "mardoto-regular";
-  src: url("/fonts/Mardoto-Regular.otf") format("otf");
-  font-weight: 400;
-  font-style: normal;
+  font-family: mardoto-regular;
+  src: url(../../public/fonts/Mardoto-Regular.otf);
+}
+
+@font-face {
+  font-family: mardoto-medium;
+  src: url(../../public/fonts/Mardoto-Medium.otf);
+}
+
+@font-face {
+  font-family: public-sans-regular;
+  src: url(../../public/fonts/PublicSans-Regular.otf);
+}
+
+@font-face {
+  font-family: public-sans-medium;
+  src: url(../../public/fonts/PublicSans-Medium.otf);
+}
+
+@theme {
+  --breakpoint-tablet: 601px;
+  --breakpoint-desktop: 1441px;
+
+  --font-mardoto-regular: "mardoto-regular";
+  --font-public-sans-regular: "public-sans-regular";
+  --font-public-sans-medium: "public-sans-medium";
+  --font-mardoto-medium: "mardoto-medium";
 }

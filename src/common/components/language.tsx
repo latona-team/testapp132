@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Icon from "@/src/common/components/icon";
 
 interface Props {
@@ -14,10 +14,7 @@ function Language({ text }: Props) {
       className="flex items-center gap-1.5 cursor-pointer"
       onClick={() => setOpen(!open)}
     >
-      <p
-        className="text-[14px] leading-5 text-white"
-        style={{ fontFamily: '"mardoto-regular", sans-serif' }}
-      >
+      <p className="text-[14px] leading-5 text-white font-mardoto-regular">
         {text}
       </p>
 
@@ -26,7 +23,7 @@ function Language({ text }: Props) {
           open ? "rotate-180" : "rotate-0"
         }`}
       >
-        <Icon name="down" className="w-full h-full" />
+        <Icon name="down" containerClassName="w-full h-full" />
       </div>
     </div>
   );
