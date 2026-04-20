@@ -1,14 +1,10 @@
-import React from "react";
 import Language from "@/src/common/components/language";
 
 function HeaderFirstPart() {
   return (
-    <div className="py-2.5 px-5 bg-[#023D63]">
+    <div className="py-2.5 px-5 bg-[#023D63] tablet:py-3 tablet:px-10 desktop:px-75">
       <div className="flex items-center justify-between">
-        <p
-          className="text-white text-[12px] leading-3.5 w-46.5"
-          style={{ fontFamily: '"mardoto-regular", sans-serif' }}
-        >
+        <p className="text-white text-[12px] tablet:text-[14px] tablet:leading-4.5 leading-3.5 tablet:w-86.25 w-46.5 font-mardoto-regular">
           Welcome to SYVERA SYSTEMS wholesale marketplace.
         </p>
         <div className="flex items-center gap-5">

@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderSecondPart from "@/src/common/components/header-second-part";
 import HeaderFirstPart from "@/src/common/components/header-first-part";
 import HeaderThirdPart from "@/src/common/components/header-third-part";
