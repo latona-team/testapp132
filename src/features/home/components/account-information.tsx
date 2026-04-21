@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Icon from "@/src/common/components/icon";
 import Input from "@/src/common/components/input";
 import ChangePassword from "@/src/common/components/change-password";
@@ -32,32 +32,37 @@ function AccountInformation() {
     confirmPassword: false,
   });
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    },
+    [],
+  );
 
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setPasswordData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const handlePasswordChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
 
-  const togglePasswordVisibility = (field: PasswordFieldName) => {
+      setPasswordData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    },
+    [],
+  );
+
+  const togglePasswordVisibility = useCallback((field: PasswordFieldName) => {
     setShowPasswordState((prev) => ({
       ...prev,
       [field]: !prev[field],
     }));
-  };
+  }, []);
 
-  const togglePasswordModal = (open: boolean) => {
+  const togglePasswordModal = useCallback((open: boolean) => {
     setShowPasswordModal(open);
     if (!open) {
       setPasswordData({
@@ -72,9 +77,9 @@ function AccountInformation() {
         confirmPassword: false,
       });
     }
-  };
+  }, []);
 
-  const handleSavePassword = () => {
+  const handleSavePassword = useCallback(() => {
     if (
       !passwordData.oldPassword.trim() ||
       !passwordData.newPassword.trim() ||
@@ -92,19 +97,22 @@ function AccountInformation() {
     console.log("Save password", passwordData);
     setPasswordErrors(null);
     togglePasswordModal(false);
-  };
+  }, [passwordData, togglePasswordModal]);
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-      console.log("Image uploaded:", file);
-    }
-  };
+  const handleImageUpload = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImagePreview(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+        console.log("Image uploaded:", file);
+      }
+    },
+    [],
+  );
 
   return (
     <div className="w-full pt-10 px-5 pb-17.5 tablet:p-10 desktop:px-75 max-w-330 desktop:pl-0 desktop:pt-5 desktop:mx-auto">

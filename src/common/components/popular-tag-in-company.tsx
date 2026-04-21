@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Tag from "@/src/common/components/tag";
 
 interface Props {
@@ -9,9 +9,9 @@ interface Props {
 function PopularTagInCompany({ tags }: Props) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const toggleTag = (tag: string) => {
+  const toggleTag = useCallback((tag: string) => {
     setActiveTag((prev) => (prev === tag ? null : tag));
-  };
+  }, []);
 
   return (
     <div className="flex flex-col gap-4.5 desktop:w-78">

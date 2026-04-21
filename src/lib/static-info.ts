@@ -1,3 +1,5 @@
+import { ContactItem, Links } from "@/src/lib/type";
+
 export const LINKS_FOR_TOP_CATEGORIES: Links[] = [
   { id: 1, name: "Computer & Laptop" },
   { id: 2, name: "SmartPhone" },
