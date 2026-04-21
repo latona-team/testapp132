@@ -12,9 +12,9 @@ function Footer() {
   return (
     <div className="bg-[#F2F4F5]">
       <div className="flex flex-col ">
-        <div className="py-10 px-5 tablet:p-10 desktop:px-75">
+        <div className="py-10 px-5 tablet:p-10 desktop:px-75 desktop:py-18">
           <div className="flex flex-col gap-6 desktop:flex-row desktop:justify-between">
-            <div className="desktop:flex desktop:flex-col desktop:gap-6">
+            <div className="desktop:flex desktop:flex-col desktop:gap-6 desktop:w-134">
               <div className="relative w-45 h-15.5 desktop:w-45">
                 <Image src="/images/logo.png" alt="logo" fill />
               </div>

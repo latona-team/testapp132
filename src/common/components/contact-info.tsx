@@ -11,12 +11,12 @@ function ContactInfo() {
             {href ? (
               <a
                 href={href}
-                className="font-mardoto-regular text-[18px] leading-6 text-[#191C1F] hover:text-blue-600"
+                className="font-mardoto-regular text-[16px] leading-6 text-[#191C1F] hover:text-blue-600"
               >
                 {label}
               </a>
             ) : (
-              <span className="font-mardoto-regular text-[18px] leading-6 text-[#191C1F]">
+              <span className="font-mardoto-regular text-[16px] leading-6 text-[#191C1F]">
                 {label}
               </span>
             )}
@@ -24,7 +24,7 @@ function ContactInfo() {
         ))}
       </div>
 
-      <div className="border-t border-[#E4E7E9] pt-1.5">
+      <div className="border-t border-[#E4E7E9] pt-1.5 desktop:w-86">
         <div className="flex items-center gap-2">
           <p className="font-mardoto-regular text-[16px] leading-5 text-[#191C1F]">
             Follow us:

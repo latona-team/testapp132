@@ -107,7 +107,7 @@ function AccountInformation() {
   };
 
   return (
-    <div className="w-full pt-10 px-5 pb-17.5 tablet:p-10 desktop:px-75">
+    <div className="w-full pt-10 px-5 pb-17.5 tablet:p-10 desktop:px-75 max-w-330 desktop:pl-0 desktop:pt-5 desktop:mx-auto">
       <button className="flex items-center justify-between bg-[#0261B9] text-white px-5 py-2.5 w-41.25 rounded-sm">
         <Icon name="user-white" size={20} />
         <span className="text-white text-[14px] leading-5 font-mardoto-regular">
@@ -127,7 +127,7 @@ function AccountInformation() {
         </div>
         <div className="border border-[#F2F4F5] px-5 pb-2.5 tablet:pt-10 tablet:pb-5">
           <div className="flex flex-col tablet:flex-row  tablet:gap-5">
-            <div className="pt-5 tablet:pt-0">
+            <div className="pt-5 tablet:pt-0 desktop:pt-5">
               <label
                 htmlFor="image-upload"
                 className="flex flex-col items-center justify-center tablet:w-40 tablet:h-40 w-25 h-25 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 mb-3 overflow-hidden"
@@ -149,7 +149,7 @@ function AccountInformation() {
                 ) : (
                   <div className="flex flex-col items-center tablet:gap-2.5">
                     <Icon name="upload" />
-                    <span className="text-[12px] leading-5 text-[#5F6C72] font-public-sans-medium tablet:text-[14px] ">
+                    <span className="text-[12px] leading-5 text-[#5F6C72] font-public-sans-medium tablet:text-[14px]">
                       Upload Image
                     </span>
                   </div>
@@ -157,8 +157,8 @@ function AccountInformation() {
               </label>
             </div>
 
-            <div className="pt-1.75 tablet:pt-0">
-              <div className="flex flex-col gap-4">
+            <div className="pt-1.75 tablet:pt-0 desktop:pt-5">
+              <div className="flex flex-col gap-4 desktop:grid desktop:grid-cols-2">
                 <Input
                   label="Name"
                   placeholder="Filled"
@@ -233,14 +233,14 @@ function AccountInformation() {
             <button
               type="button"
               onClick={() => togglePasswordModal(true)}
-              className="rounded-sm bg-[#F2F4F5] py-3.75 pl-6 text-left w-full cursor-pointer"
+              className="rounded-sm bg-[#F2F4F5] py-3.75 pl-6 text-left w-full cursor-pointer h-12.5"
             >
               <span className="font-public-sans-medium text-[14px] leading-5 text-[#191C1F]">
                 Change Password
               </span>
             </button>
 
-            <div className="rounded-sm bg-[#F2F4F5] py-3.75 pl-6 cursor-pointer">
+            <div className="rounded-sm bg-[#F2F4F5] py-3.75 pl-6 cursor-pointer h-12.5">
               <p className="font-public-sans-medium text-[14px] leading-5 text-[#191C1F]">
                 Delete Account
               </p>

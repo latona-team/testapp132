@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "@/src/common/components/icon";
+import SearchBar from "@/src/common/components/search-bar";
 
 function HeaderSecondPart() {
   return (
@@ -8,9 +9,15 @@ function HeaderSecondPart() {
         <div className="relative w-27.5 h-9 tablet:w-40 tablet:h-16">
           <Image src="/images/logo.png" fill alt="" />
         </div>
-        <div className="p-2.5">
+        <div>
+          <SearchBar />
+        </div>
+        <div className="p-2.5 desktop:gap-6">
           <div className="flex items-center gap-5">
-            <Icon name="search" containerClassName="tablet:w-8! h-8!" />
+            <Icon
+              name="search"
+              containerClassName="tablet:w-8! h-8! desktop:hidden"
+            />
             <Icon name="bag" containerClassName="tablet:w-8! h-8!" />
             <Icon name="heart" containerClassName="tablet:w-8! h-8!" />
             <Icon name="user" containerClassName="tablet:w-8! h-8!" />

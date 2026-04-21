@@ -18,7 +18,7 @@ function HeaderThirdPart() {
             size={20}
             containerClassName="tablet:w-7! tablet:h-7!"
           />
-          <span className="text-[14px] tablet:text-[18px] text-black leading-6 font-mardoto-regular">
+          <span className="text-[14px] tablet:text-[18px] text-black leading-6 font-mardoto-regular desktop:font-mardoto-medium">
             +374-00-000-000
           </span>
         </div>
